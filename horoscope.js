@@ -1,4 +1,16 @@
 
+let playerMonth = '';
+let currentMonth = '';
+let luckyNumber = '';
+let today = '';
+
+let curr = new Date();
+let currMonth = curr.getMonth();
+let currDate = curr.getDate();
+let currYear = curr.getFullYear();
+today = `${currMonth} ${currDate} ${currYear}`;
+console.log(today);
+
 let ship = [
   //2 = love, 1 = friends, 0 = nothing
   //cap, aqu, pis, ari, tau, gem, can, leo, vir, lib, sco, sag
@@ -33,30 +45,94 @@ let ship = [
 
 let month = [
   //1
-  [0, 'Capricorn'],
+  [0, 'Capricorn', 0],
   //2
-  [1, 'Aquarius'],
+  [1, 'Aquarius', 0],
   //3
-  [2, 'Pisces'],
+  [2, 'Pisces', 0],
   //4
-  [3, 'Aries'],
+  [3, 'Aries', 0],
   //5
-  [4, 'Taurus'],
+  [4, 'Taurus', 0],
   //6
-  [5, 'Gemeni'],
+  [5, 'Gemeni', 0],
   //7
-  [6, 'Cancer'],
+  [6, 'Cancer', 0],
   //8
-  [7, 'Leo'],
+  [7, 'Leo', 0],
   //9
-  [8, 'Virgo'],
+  [8, 'Virgo', 0],
   //10
-  [9, 'Libra'],
+  [9, 'Libra', 0],
   //11
-  [10, 'Scorpio'],
+  [10, 'Scorpio', 0],
   //12
-  [11, 'Sagittarius'],
-]
+  [11, 'Sagittarius', 0],
+];
+
+localStorage.getItem('today');
+console.log(localStorage.getItem('today'));
+
+if (localStorage.getItem('today') != `${currMonth} ${currDate} ${currYear}`) {
+  console.log('get new numbers');
+  getLuckyNumber();
+  localStorage.setItem('today', `${currMonth} ${currDate} ${currYear}`);
+};
+
+localStorage.getItem('CapricornLN');
+localStorage.getItem('AquariusLN');
+localStorage.getItem('PiscesLN');
+localStorage.getItem('AriesLN');
+localStorage.getItem('TaurusLN');
+localStorage.getItem('GemeniLN');
+localStorage.getItem('CancerLN');
+localStorage.getItem('LeoLN');
+localStorage.getItem('VirgoLN');
+localStorage.getItem('LibraLN');
+localStorage.getItem('ScorpioLN');
+localStorage.getItem('SagittariusLN');
+
+function getLuckyNumber () {
+  console.log('here are the new numbers');
+  //1
+  month[0][2] = Math.floor(Math.random() * 124);
+  localStorage.setItem('CapriconLN', month[0][2]);
+  //2
+  month[1][2] = Math.floor(Math.random() * 124);
+  localStorage.setItem('AquariusLN', month[0][2]);
+  //3
+  month[2][2] = Math.floor(Math.random() * 124);
+  localStorage.setItem('PiscesLN', month[0][2]);
+  //4
+  month[3][2] = Math.floor(Math.random() * 124);
+  localStorage.setItem('AriesLN', month[0][2]);
+  //5
+  month[4][2] = Math.floor(Math.random() * 124);
+  localStorage.setItem('TaurusLN', month[0][2]);
+  //6
+  month[5][2] = Math.floor(Math.random() * 124);
+  localStorage.setItem('GemeniLN', month[0][2]);
+  //7
+  month[6][2] = Math.floor(Math.random() * 124);
+  localStorage.setItem('CancerLN', month[0][2]);
+  //8
+  month[7][2] = Math.floor(Math.random() * 124);
+  localStorage.setItem('LeoLN', month[0][2]);
+  //9
+  month[8][2] = Math.floor(Math.random() * 124);
+  localStorage.setItem('VirgoLN', month[0][2]);
+  //10
+  month[9][2] = Math.floor(Math.random() * 124);
+  localStorage.setItem('LibraLN', month[0][2]);
+  //11
+  month[10][2] = Math.floor(Math.random() * 124);
+  localStorage.setItem('ScorpioLN', month[0][2]);
+  //12
+  month[11][2] = Math.floor(Math.random() * 124);
+  localStorage.setItem('SagittariusLN', month[0][2]);
+
+  console.log(month);
+};
 
 function fplayerMonth (playerMonth) {
   console.log(playerMonth);
@@ -74,6 +150,7 @@ function fplayerMonth (playerMonth) {
     if (playerMonth === month[i][1]) {
       currentMonth = month[i][0];
       currentShip = ship[i];
+      luckyNumber = month[i][2];
     };
   };
 
@@ -99,13 +176,10 @@ function fplayerMonth (playerMonth) {
     };
   };
 
-  let randomNumber = Math.floor(Math.random() * 123);
-  console.log(randomNumber);
-
   if (playerMonth === "Aquarius" || playerMonth === "Aries") {
-    document.querySelector('.output').innerHTML = `${playerName}, you are an ${playerMonth}. You are most compatable with the following: ${loveMonth}. Your lucky number is ${randomNumber}.`
+    document.querySelector('.output').innerHTML = `${playerName}, you are an ${playerMonth}. <br> You are most compatable with the following: ${loveMonth}. <br> Your lucky number is ${luckyNumber}.`
   } else {
-    document.querySelector('.output').innerHTML = `${playerName}, you are a ${playerMonth}. You are most compatable with the following: ${loveMonth}. Your lucky number is ${randomNumber}.`;
+    document.querySelector('.output').innerHTML = `${playerName}, you are a ${playerMonth}. <br> You are most compatable with the following: ${loveMonth}. <br> Your lucky number is ${luckyNumber}.`;
   };
 
   document.querySelector('.paragraph1').innerHTML = 'Choose another Zodiac Sign';
