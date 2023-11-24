@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset = "utf-8" name = "viewport" content = "width=device-width, initial-scale=1">
+
+    <title class = "title">Daily Horoscope</title>
+
+    <link rel = "stylesheet" href = "horoscope.css">
+    <link rel = "stylesheet" href = "horoscope-general.css">
+  </head>
+
+  <body>
+    <h1 class = "header">Daily Horoscope</h1>
+    <div class = "grid2">
+      <div></div>
+      <input class = "input" placeholder = "What is your name?">
+      <div></div>
+    </div>
+    <div class = "grid3">
+      <div></div>
+      <div id = "output"></div>
+      <div></div>
+    </div>
+    <div class = "paragraph1">Choose Your Zodiac Sign:</div> 
+    
+    <div>
+      <div class = "grid outline">
+        <button class = "month earth" onclick = "
+          fplayerMonth('Capricorn');
+        ">Capricorn</button>
+
+        <button class = "month air" onclick = "
+          fplayerMonth('Aquarius');
+        ">Aquarius</button>
+
+        <button class = "month water" onclick = "
+          fplayerMonth('Pisces');
+        ">Pisces</button>
+
+        <button class = "month fire" onclick = "
+          fplayerMonth('Aries');
+        ">Aries</button>
+
+        <button class = "month earth" onclick = "
+          fplayerMonth('Taurus');
+        ">Taurus</button>
+
+        <button class = "month air" onclick = "
+          fplayerMonth('Gemeni');
+        ">Gemeni</button>
+
+        <button class = "month water" onclick = "
+          fplayerMonth('Cancer');
+        ">Cancer</button>
+
+        <button class = "month fire" onclick = "
+          fplayerMonth('Leo');
+        ">Leo</button>
+
+        <button class = "month earth" onclick = "
+          fplayerMonth('Virgo');
+        ">Virgo</button>
+
+        <button class = "month air" onclick = "
+          fplayerMonth('Libra');
+        ">Libra</button>
+
+        <button class = "month water" onclick = "
+          fplayerMonth('Scorpio');
+        ">Scorpio</button>
+
+        <button class = "month fire" onclick = "
+          fplayerMonth('Sagittarius');
+        ">Sagittarius</button>
+      </div>
+    </div>
+
+    <script src = "horoscope.js"></script>
+  </body>
+</html>

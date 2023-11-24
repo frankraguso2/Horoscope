@@ -1,0 +1,105 @@
+
+.header {
+  text-align: center;
+  font-size: 50px;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  object-position: center;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: auto;
+  object-position: center;
+}
+
+.input {
+  font-size: 20px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.paragraph1 {
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+.grid {
+  display: grid;
+  max-width: 1000px;
+  min-width: 600px;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: auto;
+  column-gap: 100px;
+  row-gap: 100px;
+}
+
+.outline {
+  border-radius: 10px;
+  border-color: gray;
+  border-style: solid;
+  padding: 50px 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+}
+
+.month {
+  padding: 10px;
+  font-size: 20px;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+.earth:hover {
+  background-color: rgb(191, 130, 69);
+  opacity: .7;
+  transition: 
+  background-color 0.5s, 
+  color 0.5s;
+}
+
+.air:hover {
+  background-color: rgb(237, 233, 230);
+  opacity: .7;
+  transition: 
+  background-color 0.5s, 
+  color 0.5s;
+}
+
+.water:hover {
+  background-color: rgb(7, 146, 188);
+  opacity: .7;
+  transition: 
+  background-color 0.5s, 
+  color 0.5s;
+}
+
+.fire:hover {
+  background-color: rgb(227, 57, 57);
+  opacity: .7;
+  transition: 
+  background-color 0.5s, 
+  color 0.5s;
+}
+
+.output {
+  padding: 10px;
+  object-position: center;
+  display: inline-block;
+  margin-top: 50px;
+  font-size: 20px;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.25);
+  background-color: rgb(206, 144, 219);
+}
