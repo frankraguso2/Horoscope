@@ -1,8 +1,5 @@
 
-let playerMonth = '';
-let currentMonth = '';
-let luckyNumber = '';
-let today = '';
+console.log('test');
 
 let curr = new Date();
 let currMonth = curr.getMonth();
@@ -10,6 +7,16 @@ let currDate = curr.getDate();
 let currYear = curr.getFullYear();
 today = `${currMonth} ${currDate} ${currYear}`;
 console.log(today);
+
+//
+today = "10 26 2023";
+console.log(today);
+//
+
+loggedToday = localStorage.getItem("loggedToday");
+console.log(loggedToday);
+
+console.log('test');
 
 let ship = [
   //2 = love, 1 = friends, 0 = nothing
@@ -70,71 +77,77 @@ let month = [
   [11, 'Sagittarius', 0],
 ];
 
-localStorage.getItem('today');
-console.log(localStorage.getItem('today'));
-
-if (localStorage.getItem('today') != `${currMonth} ${currDate} ${currYear}`) {
-  console.log('get new numbers');
-  getLuckyNumber();
-  localStorage.setItem('today', `${currMonth} ${currDate} ${currYear}`);
-};
-
-localStorage.getItem('CapricornLN');
-localStorage.getItem('AquariusLN');
-localStorage.getItem('PiscesLN');
-localStorage.getItem('AriesLN');
-localStorage.getItem('TaurusLN');
-localStorage.getItem('GemeniLN');
-localStorage.getItem('CancerLN');
-localStorage.getItem('LeoLN');
-localStorage.getItem('VirgoLN');
-localStorage.getItem('LibraLN');
-localStorage.getItem('ScorpioLN');
-localStorage.getItem('SagittariusLN');
-
-function getLuckyNumber () {
-  console.log('here are the new numbers');
-  //1
-  month[0][2] = Math.floor(Math.random() * 124);
-  localStorage.setItem('CapriconLN', month[0][2]);
-  //2
-  month[1][2] = Math.floor(Math.random() * 124);
-  localStorage.setItem('AquariusLN', month[0][2]);
-  //3
-  month[2][2] = Math.floor(Math.random() * 124);
-  localStorage.setItem('PiscesLN', month[0][2]);
-  //4
-  month[3][2] = Math.floor(Math.random() * 124);
-  localStorage.setItem('AriesLN', month[0][2]);
-  //5
-  month[4][2] = Math.floor(Math.random() * 124);
-  localStorage.setItem('TaurusLN', month[0][2]);
-  //6
-  month[5][2] = Math.floor(Math.random() * 124);
-  localStorage.setItem('GemeniLN', month[0][2]);
-  //7
-  month[6][2] = Math.floor(Math.random() * 124);
-  localStorage.setItem('CancerLN', month[0][2]);
-  //8
-  month[7][2] = Math.floor(Math.random() * 124);
-  localStorage.setItem('LeoLN', month[0][2]);
-  //9
-  month[8][2] = Math.floor(Math.random() * 124);
-  localStorage.setItem('VirgoLN', month[0][2]);
-  //10
-  month[9][2] = Math.floor(Math.random() * 124);
-  localStorage.setItem('LibraLN', month[0][2]);
-  //11
-  month[10][2] = Math.floor(Math.random() * 124);
-  localStorage.setItem('ScorpioLN', month[0][2]);
-  //12
-  month[11][2] = Math.floor(Math.random() * 124);
-  localStorage.setItem('SagittariusLN', month[0][2]);
-
-  console.log(month);
-};
-
 function fplayerMonth (playerMonth) {
+
+  console.log('inside function');
+  console.log(loggedToday);
+  console.log(today);
+
+  if (loggedToday != today) {
+    localStorage.setItem("loggedToday", today);
+    console.log(localStorage.getItem("loggedToday"));
+    loggedToday = today;
+    getLuckyNumber();
+
+    function getLuckyNumber () {
+      console.log('here are the new numbers');
+      //1
+      month[0][2] = Math.floor(Math.random() * 124);
+      localStorage.setItem('CapricornLN', month[0][2]);
+      //2
+      month[1][2] = Math.floor(Math.random() * 124);
+      localStorage.setItem('AquariusLN', month[1][2]);
+      //3
+      month[2][2] = Math.floor(Math.random() * 124);
+      localStorage.setItem('PiscesLN', month[2][2]);
+      //4
+      month[3][2] = Math.floor(Math.random() * 124);
+      localStorage.setItem('AriesLN', month[3][2]);
+      //5
+      month[4][2] = Math.floor(Math.random() * 124);
+      localStorage.setItem('TaurusLN', month[4][2]);
+      //6
+      month[5][2] = Math.floor(Math.random() * 124);
+      localStorage.setItem('GemeniLN', month[5][2]);
+      //7
+      month[6][2] = Math.floor(Math.random() * 124);
+      localStorage.setItem('CancerLN', month[6][2]);
+      //8
+      month[7][2] = Math.floor(Math.random() * 124);
+      localStorage.setItem('LeoLN', month[7][2]);
+      //9
+      month[8][2] = Math.floor(Math.random() * 124);
+      localStorage.setItem('VirgoLN', month[8][2]);
+      //10
+      month[9][2] = Math.floor(Math.random() * 124);
+      localStorage.setItem('LibraLN', month[9][2]);
+      //11
+      month[10][2] = Math.floor(Math.random() * 124);
+      localStorage.setItem('ScorpioLN', month[10][2]);
+      //12
+      month[11][2] = Math.floor(Math.random() * 124);
+      localStorage.setItem('SagittariusLN', month[10][2]);
+
+      console.log(month);
+    };
+
+  }
+
+  month[0][2] = localStorage.getItem('CapricornLN');
+  month[1][2] = localStorage.getItem('AquariusLN');
+  month[2][2] = localStorage.getItem('PiscesLN');
+  month[3][2] = localStorage.getItem('AriesLN');
+  month[4][2] = localStorage.getItem('TaurusLN');
+  month[5][2] = localStorage.getItem('GemeniLN');
+  month[6][2] = localStorage.getItem('CancerLN');
+  month[7][2] = localStorage.getItem('LeoLN');
+  month[8][2] = localStorage.getItem('VirgoLN');
+  month[9][2] = localStorage.getItem('LibraLN');
+  month[10][2] = localStorage.getItem('ScorpioLN');
+  month[11][2] = localStorage.getItem('SagittariusLN');
+  console.log(month);
+
+
   console.log(playerMonth);
 
   console.log(playerName = document.querySelector('.input').value);
@@ -148,6 +161,7 @@ function fplayerMonth (playerMonth) {
 
   for (let i=0; i<12; i++) {
     if (playerMonth === month[i][1]) {
+      console.log('running through months');
       currentMonth = month[i][0];
       currentShip = ship[i];
       luckyNumber = month[i][2];
@@ -156,6 +170,7 @@ function fplayerMonth (playerMonth) {
 
   console.log(currentMonth);
   console.log(currentShip);
+  console.log(luckyNumber);
 
   for (let i=0; i<12; i++) {
     if (currentShip[i] === 2) {
@@ -183,4 +198,9 @@ function fplayerMonth (playerMonth) {
   };
 
   document.querySelector('.paragraph1').innerHTML = 'Choose another Zodiac Sign';
+
+  console.log(loggedToday);
+  console.log(today);
+
 };
+
