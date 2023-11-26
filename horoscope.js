@@ -8,11 +8,6 @@ let currYear = curr.getFullYear();
 today = `${currMonth} ${currDate} ${currYear}`;
 console.log(today);
 
-//
-today = "10 26 2023";
-console.log(today);
-//
-
 loggedToday = localStorage.getItem("loggedToday");
 console.log(loggedToday);
 
